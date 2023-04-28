@@ -1,3 +1,100 @@
+<<<<<<< HEAD
+header {
+  background-image: url("../src/images/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 350px;
+  background-blend-mode: darken;
+}
+@media screen and (min-width: 480px) {
+  header {
+    height: 364px;
+    background: rgba(11, 11, 11, 0.5);
+    background-image: url("../src/images/hero-tablet.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header {
+    background-image: url("../src/images/hero-desktop.jpg");
+    height: 450px;
+  }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .search-inputs {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .search-inputs {
+    margin-top: 45px;
+  }
+}
+
+.search-header {
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 22px;
+  text-align: center;
+  width: 212px;
+  color: #DC56C5;
+  margin-bottom: 25px;
+  margin-top: 78px;
+}
+@media screen and (min-width: 480px) {
+  .search-header {
+    font-size: 25px;
+    width: 300px;
+    line-height: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .search-header {
+    font-size: 30px;
+    width: 353px;
+    line-height: 37px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .search-header {
+    font-size: 50px;
+    width: 600px;
+    line-height: 61px;
+  }
+}
+
+.search-by-name, .search-by-country {
+  width: 250px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #939393;
+  margin-bottom: 25px;
+  border: none;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding-left: 30px;
+}
+
+=======
+>>>>>>> main
 h1,
 h2,
 h3,
