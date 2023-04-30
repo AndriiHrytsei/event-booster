@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.min.css">
+    <link rel="stylesheet" href="sass/index.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
@@ -12,14 +12,23 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <p>**logo**</p>
+        <div class="logo-container">
+            <svg class="svg-logo">
+                <use href="../sprite.svg#icon-logo"></use>
+            </svg>
         </div>
         <div class = "search">
             <h1 class="search-header">FIND BEST EVENTS AROUND THE WORLD</h1>
             <div class="search-inputs">
                 <input class="search-by-name" type="text" placeholder="Start searching">
-                <input class="search-by-country" type="text" placeholder="Choose country">
+                <!-- <input class="search-by-country" type="text" placeholder="Choose country"> -->
+                <select class="search-by-country">
+                    <option value="country">country</option>
+                    <option value="country">country</option>
+                    <option value="country">country</option>
+                    <option value="country">country</option>
+                    <option value="country">country</option>
+                </select>
             </div>
         </div>
     </header>
@@ -36,7 +45,7 @@
                     <img src="http://s1.ticketm.net/dam/a/063/1689bfea-ae98-4c7e-a31d-bbca2dd14063_54361_RECOMENDATION_16_9.jpg">
                     <h3>Eurovision 2021 finals!</h3>
                     <h4>2021-05-13</h4>
-                    <p>Palace of Ukraine</p>
+                    <p>֩֩Palace of Ukraine</p>
                 </li>
                 <li class="event-3 event">
                     <img src="http://s1.ticketm.net/dam/a/063/1689bfea-ae98-4c7e-a31d-bbca2dd14063_54361_RECOMENDATION_16_9.jpg">
