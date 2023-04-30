@@ -1,5 +1,5 @@
 header{
-    background-image: url('../src/images/hero.jpg');
+    background-image: url('../images/hero.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -8,13 +8,13 @@ header{
     @media screen and (min-width:480px) {
         height: 364px;
         background: rgba(11, 11, 11, 0.5);
-        background-image: url('../src/images/hero-tablet.jpg');
+        background-image: url('../images/hero-tablet.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
     }
     @media screen and (min-width:1200px) {
-        background-image: url('../src/images/hero-desktop.jpg');
+        background-image: url('../images/hero-desktop.jpg');
         height: 450px;
     }
 }
