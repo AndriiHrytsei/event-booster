@@ -150,10 +150,11 @@
 }
 @media screen and (min-width: 1112px){
     .list-cards{
-        width: 860px;
+        width: 1112px;
     }
     .event{
-        margin-bottom: 60px;
+        margin-bottom: 50px;
+        margin-right: 56px;
     }
     .event h3{
         height: 20px;
@@ -173,5 +174,7 @@
     .event-21{
         display: none;
     }
-
+    .event:nth-child(4n){
+        margin-right: 0;
+    }
 }
