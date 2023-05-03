@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "deploy": "rm -rf dist/ && npm run build && gh-pages -d dist"
+    "build": "parcel build src/*.html --public-url /event-booster/"
   },
   "repository": {
     "type": "git",
