@@ -96,13 +96,14 @@
         align-items: center;
         margin-right: 2px;
         border: 1px solid transparent;
+        border-radius: 10px 0;
+        transition: .3s border ease-in-out;
     }
     .li-nav:last-child{
         margin-right: 0;
     }
     .li-nav:hover{
         border: 1px solid #DC56C5;
-        border-radius: 10px 0;
     }
 }
 @media screen and (min-width: 768px){
@@ -111,7 +112,6 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 650px;
-
     }
     .event{
         width: 196px;
