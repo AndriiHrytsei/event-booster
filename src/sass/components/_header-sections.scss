@@ -82,11 +82,19 @@
     }
 }
 
+.search-form{
+    // background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
 
+.search-by-country{
+    backdrop-filter: blur(10px);
+}
 
 .search-by-s{
     background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
     height: 20px;
     border-radius: 20px 0 0 20px;
     padding: 10px 30px;
@@ -111,7 +119,7 @@
     cursor: pointer;
     border-radius: 0 40px 40px 0;
     background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
 }
 
 .icon{
