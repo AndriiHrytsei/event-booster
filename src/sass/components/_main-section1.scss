@@ -1,4 +1,258 @@
 @media screen and (min-width: 320px){
+    // ==================================================== modals ===================================================================
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        margin: 0 auto;       
+
+        &-window {
+            position: absolute;
+            background-color: #FFF2FD;
+            width: 272px;
+            height: 880px;
+            border-top-left-radius: 150px;
+            border-bottom-right-radius: 150px;
+            left: 0%;
+            top: 0%;
+        }
+    }
+
+    .svg-close {
+        color: #4C00FE;
+        font-size: 28px;
+        font-weight: bold;
+        margin-left: 230px;
+        margin-top: 25px;
+
+        &:hover,
+        &:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+    .head-image{
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     
+    
+        & img {
+            height: 90px;
+            width: 90px;
+            border-radius: 100%;
+        }
+    }
+
+    .main-image {
+        display: none;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & h2 {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            color: #DC56C5;
+        }
+
+        & p {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #0E0E0E;
+            margin-top: 5px;
+            width: 243px;
+        }
+    }
+
+    .when {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & h2 {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            color: #DC56C5;
+            margin-top: 10px;
+        }
+
+        & p {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #0E0E0E;
+            margin-top: 4px;
+        }
+    }
+
+    .where {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & h2 {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            color: #DC56C5;
+            margin-top: 10px;
+        }
+
+        & p {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #0E0E0E;
+            margin-top: 4px;
+        }
+    }
+
+    .who {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & h2 {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            color: #DC56C5;
+            margin-top: 10px;
+        }
+
+        & p {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #0E0E0E;
+            margin-top: 4px;
+        }
+    }
+
+    .prices {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & h2 {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            color: #DC56C5;
+            margin-top: 10px;
+        }
+    }
+
+    .standart-ticket {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+
+        & svg {
+            height: 16px;
+            margin-right: 13px;
+        }
+
+        & p {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #0E0E0E;
+        }
+    }
+
+    .vip-ticket {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+
+        & svg {
+            height: 16px;
+            margin-right: 13px;
+        }
+
+        & p {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #0E0E0E;
+        } 
+    }
+
+    .buy-tickets {
+        background: #4C00FE;
+        border-radius: 5px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        color: #FFFFFF;
+        padding: 10px 19px;
+        border: solid 1px #4C00FE;
+        margin-top: 10px;
+
+        &:active {
+            color: #4C00FE;
+            background-color: #FFFFFF;
+            border-color: #4C00FE;
+            font-weight: 600;
+            // transition: 0.5s;
+        }
+    }
+
+    .more-information {
+        & button {
+            border: 1px solid #4C00FE;
+            border-radius: 5px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            color: #4C00FE;
+            background-color: white;
+            padding: 3px 10px;
+            height: 40px;
+            margin-top: 25px;
+            margin-left: 13px;
+
+            &:active {
+                border: 2px solid #DC56C5;
+            }
+        }
+    }
+// =================================================================================================================
+
+
     .main-section1{
         display: flex;
         justify-content: center;
@@ -104,7 +358,73 @@
         border-radius: 10px 0;
     }
 }
+
+
 @media screen and (min-width: 768px){
+// ==================================================== modals ===================================================================
+    .modal-window {
+        width: 595px;
+        height: 831px;
+    }
+
+    .svg-close {
+        margin-top: 20px;
+        margin-left: 543px;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 36px;
+    }
+
+    .head-image {
+        height: 103px;
+    }
+
+    .main-image {
+        display: block;
+
+        & img {
+            height: 416px;
+            width: 233px;
+        }
+    }
+
+    .info {
+        display: flex;
+        align-items: flex-start;
+
+        & p {
+            width: 265px;
+            height: 100px;
+            text-align: start;
+        }
+    }
+
+    .when {
+        align-items: flex-start;
+    }
+
+    .where {
+        align-items: flex-start;
+    }
+
+    .who {
+        align-items: flex-start;
+    }
+
+    .prices {
+        align-items: flex-start;
+    }
+
+    .more-information {
+        margin-top: 13px;
+        margin-left: 165px;
+    }
+// =======================================================================================================================
+
     .list-cards{
         display: flex;
         flex-wrap: wrap;
@@ -143,12 +463,102 @@
     }
     .event-21{
         display: block;
-    }
+    } 
     .nav-bar{
         margin-top: 0;
     }
 }
-@media screen and (min-width: 1112px){
+
+
+@media screen and (min-width: 1200px){
+// ==================================================== modals ===================================================================
+    .modal-window {
+        width: 930px;
+        height: 1023px;
+    }
+
+    .svg-close {
+        margin-left: 875px;
+    }
+
+    .main-image {
+        & img {
+            height: 641px;
+            width: 360px;
+        }
+    }
+
+    .info {
+        & h2 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+        }
+
+        & p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            width: 450px;
+            height: 66px;   
+        }
+    }
+
+    .when {
+        & h2 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        & p {
+            font-size: 18px;
+        }
+    }
+
+    .where {
+        & h2 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        & p {
+            font-size: 18px;
+        }
+    }
+
+    .who {
+        & h2 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        & p {
+            font-size: 18px;
+        }
+    }
+
+    .prices {
+        & h2 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        & p {
+            font-size: 18px;
+        }
+    } 
+
+    .buy-tickets {
+        margin-top: 20px;
+        margin-bottom: 18px;
+    }
+
+    .more-information {
+        margin-left: 357px;
+        margin-top: 45px;
+    }
+// =======================================================================================================================
+
     .list-cards{
         width: 860px;
     }
