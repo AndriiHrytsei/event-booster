@@ -2,11 +2,11 @@
   "name": "event-booster",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://andriihrytsei.github.io/event-booster/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "deploy": "rm -rf dist/ && npm run build && gh-pages -d dist"
+    "build": "parcel build src/*.html --public-url /event-booster/"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,11 @@
   "bugs": {
     "url": "https://github.com/AndriiHrytsei/event-booster/issues"
   },
-  "homepage": "https://github.com/AndriiHrytsei/event-booster#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.3",
-    "gh-pages": "^5.0.0",
     "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

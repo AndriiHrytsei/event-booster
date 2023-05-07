@@ -279,6 +279,15 @@
     .event-20{
         margin-bottom: 0;
     }
+    .ramka-event{
+        width: 108px;
+        height: 101px;
+        border: 1px solid rgba(220, 86, 197, 0.3);
+        border-radius: 50px 0px;
+        margin-bottom: -99px;
+        margin-left: 30px;
+        box-sizing: border-box;
+    }
     .event img{
         width: 128px;
         height: 161px;
@@ -349,13 +358,15 @@
         justify-content: center;
         align-items: center;
         margin-right: 2px;
+        border: 1px solid transparent;
+        border-radius: 10px 0;
+        transition: .3s border ease-in-out;
     }
     .li-nav:last-child{
         margin-right: 0;
     }
     .li-nav:hover{
         border: 1px solid #DC56C5;
-        border-radius: 10px 0;
     }
 }
 
@@ -430,7 +441,6 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 650px;
-
     }
     .event{
         width: 196px;
@@ -441,6 +451,12 @@
     }
     .event:nth-child(odd){
         margin-left: 0;
+    }
+    .ramka-event{
+        width: 153px;
+        height: 143px;
+        margin-bottom: -140px;
+        margin-left: 40px;
     }
     .event img{
         width: 180px;
@@ -560,10 +576,11 @@
 // =======================================================================================================================
 
     .list-cards{
-        width: 860px;
+        width: 1112px;
     }
     .event{
-        margin-bottom: 60px;
+        margin-bottom: 50px;
+        margin-right: 56px;
     }
     .event h3{
         height: 20px;
@@ -583,5 +600,7 @@
     .event-21{
         display: none;
     }
-
+    .event:nth-child(4n){
+        margin-right: 0;
+    }
 }

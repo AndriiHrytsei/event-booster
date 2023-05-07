@@ -1,0 +1,22 @@
+footer{
+    div{
+        padding: 20% 5% ;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        a{
+        color: #939393;
+        font-weight: 400;
+        font-size: 1em;
+        text-decoration:none; 
+        transition: .5s color ease-in-out;
+            &:hover{
+                color: #1174ad;
+
+            }
+    }
+}
+}

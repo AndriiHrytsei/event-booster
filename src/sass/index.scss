@@ -1,8 +1,10 @@
 //! \\\\\\\\\\\\\\\\ header \\\\\\\\\\\\\\\\\
-@import "./layout/header";
-@import "./components/header-sections";
+@import "layout/header";
+@import "components/header-sections";
 // ???????????????????? main ??????????????????
-@import './base/reset';
-@import './components/main-section1';
-@import './layout/main';
-// ||||||||||||||||||| footer |||||||||||||||
+@import 'base/reset';
+@import 'components/main-section1';
+@import 'layout/main';
+// *||||||||||||||||||| footer |||||||||||||||*
+@import 'components/footer-section';
+@import 'layout/footer';
