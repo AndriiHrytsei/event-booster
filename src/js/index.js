@@ -9,13 +9,11 @@ countrySelcetJS.fetchCountries("https://restcountries.com/v3.1/all")
   })
 
 
+//!------------- events ---------------
 eventsJS.searchForm.addEventListener("submit", (e)=>{
   e.preventDefault()
   eventsJS.eventList.replaceChildren("")
   eventsJS.fetchEvents(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=Thqn5txrZvBNrP2vPhyOGtn3h4ymZ92S&keyword=${eventsJS.eventInput.value}&size=20`)
-
-//!------------- events ---------------
-eventsJS.fetchEvents("https://app.ticketmaster.com/discovery/v2/events.json?size=20&apikey=Thqn5txrZvBNrP2vPhyOGtn3h4ymZ92S")
     .then(data => {
       eventsJS.renderEvents(data["_embedded"]["events"])
   })
