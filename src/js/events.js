@@ -1,17 +1,23 @@
 export const eventList = document.querySelector(".list-cards")
+export const eventInput = document.querySelector(".search-by-s")
+export const countryInput = document.querySelector(".search-by-country")
+export const searchForm = document.querySelector(".search-form")
 
 export async function fetchEvents(api){
-    const response = await fetch(api)
-    const events = await response.json()
-    return events
+    try{
+        const response = await fetch(api)
+        const events = await response.json()
+        return events
+  } catch (error){
+    console.log(error.message);
+  }
 }
 
 
-
 export function renderEvents(events) {
-    events.forEach(event =>{
+    events.forEach(event => {
         eventList.insertAdjacentHTML("beforeend", `
-            <li class="event-1 event">
+            <li class="event">
                 <div class="ramka-event"></div>
                 <img src=${event["images"][0]["url"]}>
                 <h3>${event["name"]}</h3>
