@@ -137,12 +137,9 @@
 }
 
 .search-by-country{
-    backdrop-filter: blur(10px);
-}
-
-.search-by-country{
     @extend .search-by-s;
     width: 270px;
     height: 40px;
     border-radius: 20px;
+    backdrop-filter: blur(10px);
 }
