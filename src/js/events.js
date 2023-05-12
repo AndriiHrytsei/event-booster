@@ -19,7 +19,7 @@ export function renderEvents(events) {
         eventList.insertAdjacentHTML("beforeend", `
             <li class="event">
                 <div class="ramka-event"></div>
-                <img src=${event["images"][0]["url"]}>
+                <img class="event-image" src=${event["images"][0]["url"]}>
                 <h3>${event["name"]}</h3>
                 <h4>${event["dates"]["start"]["localDate"]}</h4>
                 <p>${event["_embedded"]["venues"][0]["name"]}</p>

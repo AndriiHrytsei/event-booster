@@ -20,11 +20,7 @@ eventsJS.searchForm.addEventListener("submit", (e)=>{
 })
 
 //!------------- modals ---------------
-modalsJS.cardEvents.forEach((cardEvent) => {
-  cardEvent.addEventListener('click', () => {
-    modalsJS.modal.style.display = "block";
-  });
-});
+
 
 
 modalsJS.span.addEventListener("click", () => {
@@ -36,6 +32,20 @@ window.onclick = function(event) {
      modalsJS.modal.style.display = "none";
   }
 }
+
+
+eventsJS.eventList.addEventListener("click", (e)=>{
+  // const newArr = Array.from(modalsJS.cardEvents)
+  const cardEvents = document.querySelectorAll(".event-image")
+  cardEvents.forEach((cardEvent) => {
+    if (e.target === cardEvent) {
+        modalsJS.modal.style.display = "block";
+    }
+  })
+})
+
+
+
 
 //!------------- loader ---------------
 window.addEventListener('load', () => {

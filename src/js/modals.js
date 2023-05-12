@@ -1,6 +1,6 @@
 export const modal = document.querySelector("#myModal");
 export const span = document.querySelector(".svg-close");
-export const cardEvents = document.querySelectorAll(".event")
+// export const cardEvents = document.querySelectorAll(".event")
 
 // span.addEventListener("click", () => {
 //   modal.style.display = "none";
