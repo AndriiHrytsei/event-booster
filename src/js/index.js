@@ -20,7 +20,7 @@ eventsJS.searchForm.addEventListener("submit", (e)=>{
         const cards = document.querySelectorAll(".event-image")
         cards.forEach((card) => {
           if (e.target === card) {
-            modalsJS.modal.style.display = "block";
+            modalsJS.modal.style.display = "flex";
             modalsJS.eventImgHead.src = e.target.dataset.eventimghead;
             modalsJS.eventImgMain.src = e.target.dataset.eventimgmain;
             modalsJS.date.textContent = e.target.dataset.date;
