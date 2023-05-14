@@ -19,7 +19,6 @@
     "url": "https://github.com/AndriiHrytsei/event-booster/issues"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.3",
     "parcel": "^2.8.3"
   },
   "dependencies": {
