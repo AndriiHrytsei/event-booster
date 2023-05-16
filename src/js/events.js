@@ -17,9 +17,7 @@ const countrySelect = document.querySelector(".search-by-country")
 export function renderEvents(events) {
     events.forEach(event => {
         eventList.insertAdjacentHTML("beforeend", `
-            <li class="event" 
-            
-            >
+            <li class="event">
             <div class="ramka-event"></div>
             <img class="event-image" src=${event["images"][0]["url"]}
                 data-name="${event["name"]}"
