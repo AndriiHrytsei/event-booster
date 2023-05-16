@@ -12,7 +12,7 @@ export async function fetchEvents(api){
         console.log(error.message);
     }
 }
-
+const countrySelect = document.querySelector(".search-by-country")
 
 export function renderEvents(events) {
     events.forEach(event => {
@@ -40,3 +40,65 @@ export function renderEvents(events) {
         `)
     })
 }
+
+
+
+// // ******pagination******
+// export async function main(){
+
+//     let currentPage = 1;
+//     let rows = 20;
+//     fetchEvents(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=Thqn5txrZvBNrP2vPhyOGtn3h4ymZ92S&keyword=${eventInput.value}&size=${rows}&countryCode=${countrySelect.value}&page=${currentPage}`)
+//     .then(data => {function displayList(arrData, rowPerPage, page){
+//         const postsEl = document.querySelector(`.list-cards`);
+//         postsEl.innerHTML =  "";
+//         page--;
+
+//         const start = rowPerPage * page;
+//         const end = start + rowPerPage;
+//         const paginatedData = arrData.slice(start, end);
+
+//         paginatedData.forEach((el) => {
+//             const postEl = document.createElement("li")
+//             postEl.classList.add("li-nav");
+//             postEl.innerText = `${el.title}`;
+//             postsEl.appendChild(postEl);
+//         })
+
+//     }
+//     function displayPagination(arrData, rowPerPage){
+//         const paginationEl = document.querySelector(`.ul-nav-bar`);
+//         const pagesCount = Math.ceil(arrData.length / rowPerPage);
+//         const ulEl = document.createElement("ul")
+//         // ulEl.classList.add('CLASS');
+
+//         for(let i = 0; i < pagesCount; i++){
+//             const liEl =  displayPaginationBtn(i + 1 );
+//             ulEl.appendChild(liEl)
+//         }
+//         paginationEl.appendChild(ulEl)
+//     }
+//     function displayPaginationBtn(page){
+//         const liEl = document.createElement("li")
+//         // liEl.classList.add('CLASS')
+//         liEl.innerText = page
+
+//         if (currentPage == page) liEl.classList.add(`.li-nav:focus`)
+
+//         liEl.addEventListener('click', () =>{
+//             currentPage = page
+//             displayList(data["_embedded"]["events"], rows, currentPage)
+//             let currentPageItemLi = document.querySelector('li.li-nav:focus')
+//             // currentPageItemLi.classList.remove('.li-nav:focus')
+//             liEl.classList.add('.li-nav:focus')
+//         })
+
+//         return liEl;
+//     }
+
+// displayList(data["_embedded"]["events"], rows, currentPage);
+// displayPagination(data["_embedded"]["events"], rows);
+// })
+
+// }   
+// main()

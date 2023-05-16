@@ -288,6 +288,7 @@
         box-sizing: border-box;
     }
     .event img{
+        object-fit: cover;
         width: 128px;
         height: 161px;
         border-radius: 50px 0px;
@@ -366,6 +367,9 @@
         margin-right: 0;
     }
     .li-nav:hover{
+        border: 1px solid #DC56C5;
+    }
+    .li-nav:focus{
         border: 1px solid #DC56C5;
     }
 }
@@ -604,4 +608,15 @@
     .event:nth-child(4n){
         margin-right: 0;
     }
+}
+// ---------BUTTONS, PAGINATION---------
+    // button{
+    // padding: 0;
+    // border: none;
+    // font: inherit;
+    // color: inherit;
+    // background-color: transparent;
+    // }
+.nav-bar{
+    margin-top: 3%;
 }
