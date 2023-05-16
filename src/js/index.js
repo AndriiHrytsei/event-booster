@@ -47,7 +47,7 @@ countrySelcetJS
 //     });
 // });
 
-//* ==============================================
+//!------------- pagination ---------------
 const paginationBox = document.querySelector('.pagination')//****ДОБАВИТИ СТИЛІ */
 eventsJS.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -88,6 +88,7 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
             renderPage(currentPage);
           });
           paginationBox.appendChild(button);
+          button.classList.add("pag-but")
         }
         // Додавання контейнера пагінації до сторінки
         
@@ -98,108 +99,39 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
       renderPage(currentPage);
       renderPagination();
 
-
-// ------MODAL-----
-
-      eventsJS.eventList.addEventListener("click", (e) => {
-        const cards = document.querySelectorAll(".event-image");
-        cards.forEach((card) => {
-          if (e.target === card) {
-            modalsJS.modal.style.display = "flex";
-            modalsJS.eventImgHead.src = e.target.dataset.eventimghead;
-            modalsJS.eventImgMain.src = e.target.dataset.eventimgmain;
-            modalsJS.date.textContent = e.target.dataset.date;
-            modalsJS.time.textContent = `${e.target.dataset.time} (${e.target.dataset.timezone})`;
-            modalsJS.location.textContent = `${e.target.dataset.city}, ${e.target.dataset.country}`;
-            modalsJS.place.textContent = e.target.dataset.place;
-            modalsJS.who.textContent = e.target.dataset.name;
-          }
-        });
-      });
-      modalsJS.span.addEventListener("click", () => {
-        modalsJS.modal.style.display = "none";
-      });
-
-      window.onclick = function (event) {
-        if (event.target == modalsJS.modal) {
-          modalsJS.modal.style.display = "none";
-        }
-      };
-    });
-});
+  
 //!------------- modals ---------------
+eventsJS.eventList.addEventListener("click", (e) => {
+  const cards = document.querySelectorAll(".event-image");
+    cards.forEach((card) => {
+      if (e.target === card) {
+        modalsJS.modal.style.display = "flex";
+          modalsJS.eventImgHead.src = e.target.dataset.eventimghead;
+          modalsJS.eventImgMain.src = e.target.dataset.eventimgmain;
+          modalsJS.date.textContent = e.target.dataset.date;
+          modalsJS.time.textContent = `${e.target.dataset.time} (${e.target.dataset.timezone})`;
+          modalsJS.location.textContent = `${e.target.dataset.city}, ${e.target.dataset.country}`;
+          modalsJS.place.textContent = e.target.dataset.place;
+          modalsJS.who.textContent = e.target.dataset.name;
+        }
+      });
+    });
+    modalsJS.span.addEventListener("click", () => {
+      modalsJS.modal.style.display = "none";
+    });
+
+    window.onclick = function (event) {
+      if (event.target == modalsJS.modal) {
+        modalsJS.modal.style.display = "none";
+      }
+    };
+  });
+});
 
 //!------------- loader ---------------
 window.addEventListener("load", () => {
   loaderJS.mask.classList.add("hide");
   setTimeout(() => {
     loaderJS.mask.remove();
-  }, 3000);
+  }, 1000);
 });
-
-//!------------- pagination ---------------
-// //Запит
-// async function getData() {
-//   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-//   const data = await response.json();
-//   return data;
-// }
-// // Загальні змінні
-// const dataList = []; // Масив з даними
-// const itemsPerPage = 5; // Кількість елементів на сторінці
-// let currentPage = 1; // Поточна сторінка
-
-// // Функція для генерації списку даних
-// function generateDataList() {
-//   for (let i = 1; i <= 50; i += 1) {
-//     dataList.push("Елемент " + i);
-//   }
-// }
-
-// // Функція для відображення даних на поточній сторінці
-// function displayDataOnPage() {
-//   const dataListElement = document.getElementById("dataList");
-//   dataListElement.innerHTML = ""; // Очищаємо список перед відображенням нових даних
-
-//   const startIndex = (currentPage - 1) * itemsPerPage;
-//   const endIndex = startIndex + itemsPerPage;
-//   const currentPageData = dataList.slice(startIndex, endIndex);
-
-//   currentPageData.forEach(function (data) {
-//     const li = document.createElement("li");
-//     li.innerText = data;
-//     dataListElement.appendChild(li);
-//   });
-// }
-
-// // Функція для генерації посилань пагінації
-// function generatePaginationLinks() {
-//   const paginationElement = document.getElementById("pagination");
-//   paginationElement.innerHTML = ""; // Очищаємо пагінацію перед генерацією нових посилань
-
-//   var totalPages = Math.ceil(dataList.length / itemsPerPage);
-
-//   for (let i = 1; i <= totalPages; i++) {
-//     var link = document.createElement("a");
-//     link.href = "#";
-//     link.innerText = i;
-
-//     // Додаємо обробник подій для зміни поточної сторінки при кліку на посилання
-//     link.addEventListener("click", function (event) {
-//       currentPage = parseInt(event.target.innerText);
-//       displayDataOnPage();
-//     });
-
-//     paginationElement.appendChild(link);
-//   }
-// }
-
-// // Ініціалізація пагінації
-// function initializePagination() {
-//   generateDataList();
-//   generatePaginationLinks();
-//   displayDataOnPage();
-// }
-
-// // Запускаємо пагінацію
-// initializePagination();
