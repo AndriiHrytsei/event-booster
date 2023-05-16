@@ -3,24 +3,23 @@
     .modal {
         display: none;
         position: fixed;
+        overflow: auto;
         z-index: 1;
-        left: 50%;
         top: 0;
         background-color: rgba(0, 0, 0, 0.8);
         width: 100%;
         height: 100%;
-        overflow: auto;
-        margin: 0 auto;       
+        margin: 0 auto;
+        justify-content: center;       
 
         &-window {
-            position: absolute;
+            position: relative;
+            top: 2%;
             background-color: #FFF2FD;
             width: 272px;
             height: 880px;
             border-top-left-radius: 150px;
             border-bottom-right-radius: 150px;
-            left: 0%;
-            top: 0%;
         }
     }
 
@@ -293,6 +292,7 @@
         width: 128px;
         height: 161px;
         border-radius: 50px 0px;
+        object-fit: cover;
     }
     .event h3{
         // height: 31px;
@@ -380,6 +380,7 @@
     .modal-window {
         width: 595px;
         height: 831px;
+        
     }
 
     .svg-close {
