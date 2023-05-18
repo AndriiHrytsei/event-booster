@@ -39,16 +39,10 @@ export function renderEvents(events) {
             </li>
         `)
         const eventLocations = document.querySelectorAll(".event-location")
-        const evts = document.querySelectorAll(".event")
         eventLocations.forEach(eventLocation => {
-            if (eventLocation.textContent === "undefined"){
+            if (!event["_embedded"]["venues"][0]["name"]){
                 eventLocation.textContent = "Location not given"
             }
         })
-        // evts.forEach(evt => {
-        //     if(evt.style.height > 312) {
-        //         evt.style.overflow = "hidden"
-        //     }
-        // })
     })
 }
