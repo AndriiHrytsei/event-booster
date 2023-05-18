@@ -27,7 +27,7 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
       const eventsPerPage = 20; // Кількість подій на сторінці
       const totalPages = Math.ceil(events.length / eventsPerPage); // Загальна кількість сторінок
       let currentPage = 1; // Початкова сторінка
-
+      
       // Функція для рендерингу подій на поточній сторінці
       function renderPage(page) {
         eventsJS.eventList.replaceChildren("");
