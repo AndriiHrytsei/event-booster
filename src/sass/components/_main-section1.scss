@@ -300,6 +300,7 @@
     }
 
     .ramka-event{
+        pointer-events: none;
         width: 108px;
         height: 101px;
         border: 1px solid rgba(220, 86, 197, 0.3);
