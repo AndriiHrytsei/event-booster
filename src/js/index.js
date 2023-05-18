@@ -24,7 +24,6 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
     .then((data) => {
 
       const events = data["_embedded"]["events"];
-      console.log(events);
       const eventsPerPage = 20; // Кількість подій на сторінці
       const totalPages = Math.ceil(events.length / eventsPerPage); // Загальна кількість сторінок
       let currentPage = 1; // Початкова сторінка
