@@ -14,14 +14,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
+    align-items: flex-start;
+    margin-bottom: 100px;
     @media screen and (min-width:768px) {
         flex-direction: row;
         gap: 30px;    
     }
     @media screen and (min-width:1200px) {
-        margin-top: 45px;
+        // margin-top: 45px;
     }
 }
 
@@ -136,10 +136,10 @@
     fill: #939393;
 }
 
-.search-by-country{
-    @extend .search-by-s;
-    width: 270px;
-    height: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-}
+// .search-by-country{
+//     @extend .search-by-s;
+//     width: 270px;
+//     height: 40px;
+//     border-radius: 20px;
+//     backdrop-filter: blur(10px);
+// }
