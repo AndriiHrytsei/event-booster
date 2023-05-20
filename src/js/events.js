@@ -1,6 +1,6 @@
 export const eventList = document.querySelector(".list-cards")
 export const eventInput = document.querySelector(".search-by-s")
-export const countryInput = document.querySelector(".search-by-country")
+export const countryInput = document.querySelector(".options")
 export const searchForm = document.querySelector(".search-form")
 
 export async function fetchEvents(api){

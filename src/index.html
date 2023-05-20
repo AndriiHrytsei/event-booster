@@ -27,9 +27,24 @@
                     <input class="search-by-s" type="text" placeholder="Start searching">
                     <button class="search-by-s-btn" type="submit"><svg class="icon icon-search"><use href="../sprite.svg#icon-search_icon"></use></svg></button>
                 </form>
-                <select class="search-by-country">
+                <div class="wrapper">
+                    <div class="select-btn">
+                      <span value="">Choose Country</span>
+                      <svg class="icon icon-select-country"><use href="../sprite.svg#icon-select"></use></svg>
+                    </div>
+                    <div class="content">
+                        <!-- <div class="search-form-country">
+                            <input class="search-country" spellcheck="false" type="text" placeholder="Search">
+                            <svg class="icon icon-search-country"><use href="../sprite.svg#icon-search_icon"></use></svg>
+                        </div> -->
+                      <ul class="options">
+                        <li value="" class="countryLi">All countries</li>
+                      </ul>
+                    </div>
+                </div>
+                <!-- <select class="search-by-country">
                     <option value="">Choose country</option>
-                </select>
+                </select> -->
             </div>
         </div>
     </header> 
