@@ -231,19 +231,12 @@
         padding: 10px 19px;
         border: solid 1px #4C00FE;
         margin-top: 10px;
+        transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
 
-        &:active {
+        &:active, &:hover {
             color: #4C00FE;
             background-color: #FFFFFF;
             border-color: #4C00FE;
-            font-weight: 600;
-        }
-        &:hover{
-            transition: 0.3s;
-            color: #4C00FE;
-            background-color: #FFFFFF;
-            border-color: #4C00FE;
-            font-weight: 600;
         }
     }
 
@@ -261,9 +254,10 @@
             height: 40px;
             margin-top: 25px;
             margin-left: 13px;
+            transition: border .3s ease-in-out;
 
-            &:active {
-                border: 2px solid #DC56C5;
+            &:active, &:hover {
+                border: 1px solid #DC56C5;
             }
         }
     }
@@ -314,7 +308,7 @@
         margin-left: 30px;
         box-sizing: border-box;
         position: relative;
-        z-index: 1;
+        z-index: 0;
     }
     .event img{
         object-fit: cover;
@@ -322,6 +316,8 @@
         height: 161px;
         border-radius: 50px 0px;
         object-fit: cover;
+        position: relative;
+        z-index: 1;
     }
     .event h3{
         min-height: 20px;

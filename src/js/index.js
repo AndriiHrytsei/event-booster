@@ -130,7 +130,7 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
 
   eventsJS
     .fetchEvents(
-      `https://app.ticketmaster.com/discovery/v2/events.json?apikey=Thqn5txrZvBNrP2vPhyOGtn3h4ymZ92S&keyword=${eventsJS.eventInput.value}&size=30&countryCode=${countrySearhJS.selectBtn.firstElementChild.getAttribute("value")}`
+      `https://app.ticketmaster.com/discovery/v2/events.json?apikey=Thqn5txrZvBNrP2vPhyOGtn3h4ymZ92S&keyword=${eventsJS.eventInput.value}&size=200&countryCode=${countrySearhJS.selectBtn.firstElementChild.getAttribute("value")}`
     )
     .then((data) => {
 

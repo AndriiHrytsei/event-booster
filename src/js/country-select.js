@@ -18,89 +18,12 @@ export function renderCountries(countries){
     // const filterCountries = countries.filter(country => country > 15);
     countries.forEach(country => {
             countrySelect.insertAdjacentHTML("beforeend", `
-            <li value = "${country["cca2"]}" class="countryLi">${country["name"]["common"]}</li>
+            <li value="${country["cca2"]}" class="countryLi">${country["name"]["common"]}</li>
             `)
     })
 }
 
-// export function searchInputCountry(data){
-//     let arr = [];
-//     let searchWord = searchInp.value.toLowerCase();
-//     arr = countries.filter(data => {
-//         return data.toLowerCase().startsWith(searchWord);
-//     }).map(data => {
-//         let isSelected = data == selectBtn.firstElementChild.innerText ? "selected" : "";
-//         return `<li onclick="updateName(this)" class="${isSelected}">${data}</li>`;
-//     }).join("");
-//     options.innerHTML = arr ? arr : `<p style="margin-top: 10px; color: #CCCCCC;;">Sorry. Country not found!</p>`;
-// }
-
 //!------
-
-
-
-//!------
-// countrySelect.addEventListener("click", (event) => {
-//     const countryList = document.querySelectorAll(".countryLi");
-//         countryList.forEach((countryEl) => {
-//         if (event.target === countryEl) {
-//             searchInp.value = "";
-//             wrapper.classList.remove("active");
-//             selectBtn.classList.toggle("active-border");
-//             selectBtn.firstElementChild.innerText = event.target.innerText;
-//         }
-//         });
-// });
-//!------
-
-// export function searchCountry(countries){
-//     searchInp.addEventListener("keyup", () => {
-    // let searchWord = searchInp.value.toLowerCase();
-    // const array = countries.forEach((countryFilter) => {
-    //     return countryFilter.toLowerCase().startsWith(searchWord);
-    // })
-    // array.forEach(countryFilter => {
-    //     let isSelected;
-    //     if(countryFilter == selectBtn.firstElementChild.innerText){
-    //         isSelected = "selected";
-    //     } 
-    //     else{
-    //         isSelected = "";
-    //     }
-    //     // let isSelected = countryFilter == selectBtn.firstElementChild.innerText ? "selected" : "";
-    //     return `<li value = "${countryFilter["cca2"]}" class="countryLi ${isSelected}">${countryFilter["name"]["common"]}</li>`;
-    // })
-    // array.join("");
-        // options.innerHTML = array ? array : `<p style="margin-top: 10px; color: #CCCCCC;;">Sorry. Country not found!</p>`;
-    // });
-    // filterCountries(countries)
-// }
-
-// export function filterCountries(countries){
-//     const array = countries.filter((countryFilter) => {
-//         return countryFilter.toLowerCase().startsWith(searchWord);
-//     }).map(countryFilter => {
-//         let isSelected;
-//         if(countryFilter == selectBtn.firstElementChild.innerText){
-//             isSelected = "selected";
-//         } 
-//         else{
-//             isSelected = "";
-//         }
-//         // let isSelected = countryFilter == selectBtn.firstElementChild.innerText ? "selected" : "";
-//         return `<li value = "${countryFilter["cca2"]}" class="countryLi ${isSelected}">${countryFilter["name"]["common"]}</li>`;
-//     }).join("");
-//     return options.innerHTML = array ? array : `<p style="margin-top: 10px; color: #CCCCCC;;">Sorry. Country not found!</p>`;
-// }
-
-
-//!------
-// selectBtn.addEventListener("click", () => {
-//     wrapper.classList.toggle("active");
-//     selectBtn.classList.toggle("active-border");
-// });
-//!------
-
 // const options = document.querySelector(".options");
 
 // let countries = ["Afghanistan", "Algeria", "Argentina", "Australia", "Bangladesh", "Belgium", "Bhutan",
