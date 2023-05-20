@@ -126,7 +126,7 @@ const paginationBox = document.querySelector('.pagination')//****ДОБАВИТ�
 eventsJS.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   eventsJS.eventList.replaceChildren("");
-  paginationBox.innerHTML = "";
+  paginationBox.replaceChildren("")
 
   eventsJS
     .fetchEvents(
@@ -138,7 +138,7 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
       const eventsPerPage = 20; // Кількість подій на сторінці
       const totalPages = Math.ceil(events.length / eventsPerPage); // Загальна кількість сторінок
       let currentPage = 1; // Початкова сторінка
-
+      
       // Функція для рендерингу подій на поточній сторінці
       function renderPage(page) {
         eventsJS.eventList.replaceChildren("");
@@ -188,6 +188,16 @@ eventsJS.eventList.addEventListener("click", (e) => {
           modalsJS.location.textContent = `${e.target.dataset.city}, ${e.target.dataset.country}`;
           modalsJS.place.textContent = e.target.dataset.place;
           modalsJS.who.textContent = e.target.dataset.name;
+          if (e.target.dataset.info === "undefined"){
+            modalsJS.info.textContent = "No info available"
+          } else {
+            modalsJS.info.textContent = e.target.dataset.info
+          }
+          if (modalsJS.place.textContent === "undefined"){
+            modalsJS.place.textContent = "Location not given"
+          } else {
+            modalsJS.place.textContent = e.target.dataset.place
+          }
         }
       });
     });
