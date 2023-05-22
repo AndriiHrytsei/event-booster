@@ -1,0 +1,40 @@
+.dark::before {
+    content: "☼";
+    font-size: 50px;
+    color: white;
+}
+.light::before{
+    content: "⏾";
+    font-size: 50px;
+    color: black;
+}
+.light-header{
+    background-image: url("../images/white-header.jpg");
+}
+.light-main{
+    background-image: url("../images/bg-body-white.jpg");
+}
+.light-footer{
+    background-color: white;
+}
+.light-pagination{
+    color: black;
+}
+.light-h4Html{
+    color: black;
+}
+.light-pHtml{
+    color: black;
+}
+.light-h4{
+    color: black;
+}
+.light-p{
+    color: black;
+}
+.dark-h4{
+    color: white;
+}
+.dark-p{
+    color: white;
+}
