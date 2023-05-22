@@ -32,7 +32,7 @@ export function renderEvents(events) {
                 data-info="${event["info"]}"
             >
                 <h3>${event["name"]}</h3>
-                <h4 >${event["dates"]["start"]["localDate"]}</h4>
+                <h4 class="event-h4" >${event["dates"]["start"]["localDate"]}</h4>
                 <p class = "event-location">
                     ${event["_embedded"]["venues"][0]["name"]}
                 </p>
