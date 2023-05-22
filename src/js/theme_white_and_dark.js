@@ -5,7 +5,7 @@ const footerHtnl = document.querySelector("footer")
 
 swicthMode.addEventListener("click",() => {
     const cardsHtml = document.getElementsByClassName("event")
-
+    const buttonPag = document.getElementsByClassName("pag-but")
     if (swicthMode.classList[1] === "dark") {
         swicthMode.classList.remove("dark");
         swicthMode.classList.add("light");
@@ -18,7 +18,9 @@ swicthMode.addEventListener("click",() => {
         for(let i = 0;i < cardsHtml.length;i++){
             cardsHtml[i].querySelector(".event-h4").style.color= "#000";
             cardsHtml[i].querySelector(".event-location").style.color= "#000";
-            
+        }
+        for(let i = 0;i < 10;i++){
+            buttonPag[i].style.color="#000"
         }
     }
     else{
@@ -33,6 +35,9 @@ swicthMode.addEventListener("click",() => {
         for(let i = 0;i < cardsHtml.length;i++){
             cardsHtml[i].querySelector(".event-h4").style.color= "#fff";
             cardsHtml[i].querySelector(".event-location").style.color= "#fff";
+        }
+        for(let i = 0;i < 10;i++){
+            buttonPag[i].style.color="#fff"
         }
     }
 })
