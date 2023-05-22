@@ -1,4 +1,4 @@
-// import Notiflix from 'notiflix';
+import Notiflix from 'notiflix';
 import * as modalsJS from "./modals.js";
 import * as eventsJS from "./events.js";
 import * as countrySearhJS from "./country-select.js";
