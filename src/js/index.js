@@ -3,6 +3,7 @@ import * as modalsJS from "./modals.js";
 import * as eventsJS from "./events.js";
 import * as countrySearhJS from "./country-select.js";
 import * as loaderJS from "./loader.js";
+import * as themeJS from "./theme_white_and_dark.js";
 
 //!------------- notification ---------------
 
@@ -46,76 +47,10 @@ countrySearhJS.countrySelect.addEventListener("click", (event) => {
         countrySearhJS.wrapper.classList.remove("active");
         countrySearhJS.selectBtn.classList.toggle("active-border");
         countrySearhJS.selectBtn.firstElementChild.innerText = event.target.innerText;
-          // countrySearhJS.searchInp.value = "";
-
-          
-          // let checkValue = countrySearhJS.selectBtn.firstElementChild.getAttribute("value");
-          // let finalValue = "";
-          // if(checkValue === "nothing"){
-          //   finalValue = "";
-          //   console.log(finalValue);
-          // } else{
-          //   finalValue = checkValue;
-          //   console.log(finalValue);
-          // }
       }
       });
 });
 
-// //!------
-// const wrapper = document.querySelector(".wrapper");
-// const selectBtn = document.querySelector(".select-btn");
-// const searchInp = document.querySelector(".search-country");
-// const options = document.querySelector(".options");
-
-// let countries = ["Afghanistan", "Algeria", "Argentina", "Australia", "Bangladesh", "Belgium", "Bhutan",
-//                  "Brazil", "Canada", "China", "Denmark", "Ethiopia", "Finland", "France", "Germany",
-//                  "Hungary", "Iceland", "India", "Indonesia", "Iran", "Italy", "Japan", "Malaysia",
-//                  "Maldives", "Mexico", "Morocco", "Nepal", "Netherlands", "Nigeria", "Norway", "Pakistan",
-//                  "Peru", "Russia", "Romania", "South Africa", "Spain", "Sri Lanka", "Sweden", "Switzerland",
-//                  "Thailand", "Turkey", "Uganda", "Ukraine", "United States", "United Kingdom", "Vietnam"];
-
-// function addCountry(selectedCountry) {
-//     options.innerHTML = "";
-//     countries.forEach(country => {
-//         let isSelected = country == selectedCountry ? "selected" : "";
-//         let li = `<li onclick="updateName(this)" class="${isSelected}">${country}</li>`;
-//         options.insertAdjacentHTML("beforeend", li);
-//     });
-// }
-// addCountry();
-
-// function updateName(selectedLi) {
-//     searchInp.value = "";
-//     addCountry(selectedLi.innerText);
-//     wrapper.classList.remove("active");
-//     selectBtn.firstElementChild.innerText = selectedLi.innerText;
-//     selectBtn.classList.toggle("active-border");
-// }
-
-// searchInp.addEventListener("keyup", () => {
-//     let arr = [];
-//     let searchWord = searchInp.value.toLowerCase();
-//     arr = countries.filter(data => {
-//         return data.toLowerCase().startsWith(searchWord);
-//     }).map(data => {
-//         let isSelected = data == selectBtn.firstElementChild.innerText ? "selected" : "";
-//         return `<li onclick="updateName(this)" class="${isSelected}">${data}</li>`;
-//     }).join("");
-//     options.innerHTML = arr ? arr : `<p style="margin-top: 10px; color: #CCCCCC;;">Sorry. Country not found!</p>`;
-// });
-
-// selectBtn.addEventListener("click", () => {
-//     wrapper.classList.toggle("active");
-//     selectBtn.classList.toggle("active-border");
-// });
-
-// options.forEach(country => {
-//     country.addEventListener("click", () => {
-//         wrapper.classList.toggle("active");
-//         selectBtn.classList.toggle("border");
-//     })
-// });
 //!------------- events ---------------
 // eventsJS.searchForm.addEventListener("submit", (e) => {
 //   e.preventDefault();
@@ -153,6 +88,67 @@ countrySearhJS.countrySelect.addEventListener("click", (event) => {
 //       };
 //     });
 // });
+
+//!------------- white and black theme ---------------
+
+themeJS.swicthMode.addEventListener("click",() => {
+  const cardsHtml = document.querySelectorAll("event");
+  const buttonPag = document.querySelectorAll("pag-but");
+
+  if (themeJS.swicthMode.classList[1] === "dark") {
+    themeJS.swicthMode.classList.remove("dark");
+    themeJS.swicthMode.classList.add("light");
+    themeJS.headerHtml.classList.remove("dark-header");
+    themeJS.headerHtml.classList.add("light-header");
+    themeJS.mainHtml.classList.remove("dark-main");
+    themeJS.mainHtml.classList.add("light-main");
+    themeJS.footerHtml.classList.remove("dark-footer");
+    themeJS.footerHtml.classList.add("light-footer");
+
+    // cardsHtml.forEach((card)=>{
+    //   card.querySelector(".event-h4").style.color= "#000";
+    //   card.querySelector(".event-location").style.color= "#000";
+    // })
+
+    // buttonPag.forEach((but)=>{
+    //   but.style.color="#000";
+    // })
+    for(let i = 0; i < cardsHtml.length; i += 1){
+      cardsHtml[i].querySelector(".event-h4").style.color= "#000";
+      cardsHtml[i].querySelector(".event-location").style.color= "#000";
+    }
+    for(let i = 0; i < 10; i += 1){
+       buttonPag[i].style.color="#000"
+    }
+    
+  }
+  else{
+      themeJS.swicthMode.classList.remove("light");
+      themeJS.swicthMode.classList.add("dark");
+      themeJS.headerHtml.classList.remove("light-header");
+      themeJS.headerHtml.classList.add("dark-header");
+      themeJS.mainHtml.classList.remove("light-main");
+      themeJS.mainHtml.classList.add("dark-main");
+      themeJS.footerHtml.classList.remove("light-footer");
+      themeJS.footerHtml.classList.add("dark-footer");
+
+      // cardsHtml.forEach((card)=>{
+      //     card.querySelector(".event-h4").style.color= "#fff";
+      //     card.querySelector(".event-location").style.color= "#fff";
+      // })
+      // buttonPag.forEach((but)=>{
+      //   but.style.color="#fff";
+      // })
+
+      for(let i = 0; i < cardsHtml.length; i += 1){
+          cardsHtml[i].querySelector(".event-h4").style.color= "#fff";
+          cardsHtml[i].querySelector(".event-location").style.color= "#fff";
+      }
+      for(let i = 0;i < 10;i++){
+          buttonPag[i].style.color="#fff"
+      }
+  }
+})
 
 //!------------- pagination ---------------
 const paginationBox = document.querySelector('.pagination')//****ДОБАВИТИ СТИЛІ */
