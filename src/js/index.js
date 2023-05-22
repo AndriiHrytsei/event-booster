@@ -1,7 +1,23 @@
+import Notiflix from 'notiflix';
 import * as modalsJS from "./modals.js";
 import * as eventsJS from "./events.js";
 import * as countrySearhJS from "./country-select.js";
 import * as loaderJS from "./loader.js";
+
+//!------------- notification ---------------
+
+Notiflix.Notify.init({
+  failure: {
+  background: '#FFFFFF',
+  textColor: '#000000',
+  childClassName: 'notiflix-notify-failure',
+  notiflixIconColor: '#DC56C5',
+  fontAwesomeClassName: 'fas fa-times-circle',
+  fontAwesomeIconColor: '#DC56C5',
+  backOverlayColor: 'rgba(255,85,73,0.2)',
+  fontFamily: 'Montserrat',
+  }
+})
 
 //!------------- country select ---------------
 countrySearhJS
@@ -20,11 +36,28 @@ countrySearhJS.countrySelect.addEventListener("click", (event) => {
   const countryList = document.querySelectorAll(".countryLi");
       countryList.forEach((countryEl) => {
       if (event.target === countryEl) {
+        if(event.target.getAttribute("value") === "nothing"){
+          countrySearhJS.selectBtn.firstElementChild.setAttribute("value", "");
+        } else{
+          countrySearhJS.selectBtn.firstElementChild.setAttribute("value", `${event.target.getAttribute("value")}`);
+        }
+        
+        console.log(event.target.getAttribute("value"));
+        countrySearhJS.wrapper.classList.remove("active");
+        countrySearhJS.selectBtn.classList.toggle("active-border");
+        countrySearhJS.selectBtn.firstElementChild.innerText = event.target.innerText;
           // countrySearhJS.searchInp.value = "";
-          countrySearhJS.wrapper.classList.remove("active");
-          countrySearhJS.selectBtn.classList.toggle("active-border");
-          countrySearhJS.selectBtn.firstElementChild.innerText = event.target.innerText;
-          countrySearhJS.selectBtn.firstElementChild.setAttribute("value", `${event.target.getAttribute("value")}`)
+
+          
+          // let checkValue = countrySearhJS.selectBtn.firstElementChild.getAttribute("value");
+          // let finalValue = "";
+          // if(checkValue === "nothing"){
+          //   finalValue = "";
+          //   console.log(finalValue);
+          // } else{
+          //   finalValue = checkValue;
+          //   console.log(finalValue);
+          // }
       }
       });
 });
@@ -133,12 +166,16 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=Thqn5txrZvBNrP2vPhyOGtn3h4ymZ92S&keyword=${eventsJS.eventInput.value}&size=200&countryCode=${countrySearhJS.selectBtn.firstElementChild.getAttribute("value")}`
     )
     .then((data) => {
+      console.log(data["page"]["totalElements"]);
 
+      if(data["page"]["totalElements"] === 0){
+        Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
+      }
       const events = data["_embedded"]["events"];
       const eventsPerPage = 20; // Кількість подій на сторінці
       const totalPages = Math.ceil(events.length / eventsPerPage); // Загальна кількість сторінок
       let currentPage = 1; // Початкова сторінка
-      
+
       // Функція для рендерингу подій на поточній сторінці
       function renderPage(page) {
         eventsJS.eventList.replaceChildren("");
@@ -176,11 +213,11 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
 
   
 //!------------- modals ---------------
-eventsJS.eventList.addEventListener("click", (e) => {
-  const cards = document.querySelectorAll(".event-image");
-    cards.forEach((card) => {
-      if (e.target === card) {
-        modalsJS.modal.style.display = "flex";
+  eventsJS.eventList.addEventListener("click", (e) => {
+    const cards = document.querySelectorAll(".event-image");
+      cards.forEach((card) => {
+        if (e.target === card) {
+          modalsJS.modal.style.display = "flex";
           modalsJS.eventImgHead.src = e.target.dataset.eventimghead;
           modalsJS.eventImgMain.src = e.target.dataset.eventimgmain;
           modalsJS.date.textContent = e.target.dataset.date;
@@ -200,17 +237,21 @@ eventsJS.eventList.addEventListener("click", (e) => {
           }
         }
       });
-    });
-    modalsJS.span.addEventListener("click", () => {
-      modalsJS.modal.style.display = "none";
-    });
-
-    window.onclick = function (event) {
-      if (event.target == modalsJS.modal) {
-        modalsJS.modal.style.display = "none";
-      }
-    };
   });
+
+  modalsJS.span.addEventListener("click", () => {
+    modalsJS.modal.style.display = "none";
+  });
+
+  window.onclick = function (event) {
+    if (event.target == modalsJS.modal) {
+      modalsJS.modal.style.display = "none";
+    }
+  };
+  })
+  // .catch(()=>{
+  //   Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");   
+  // })
 });
 
 //!------------- loader ---------------

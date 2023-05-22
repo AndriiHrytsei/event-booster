@@ -23,6 +23,7 @@
     "parcel": "^2.8.3"
   },
   "dependencies": {
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "notiflix": "^3.2.6"
   }
 }
