@@ -1,24 +1,21 @@
-@media screen and (min-width: 320px){
-    main{
-        height: 3005PX;
-        background-color: black;
-    }
+main{
+    height: 3005px;
+    background-color: black;
+    background-image: url("../images/bg-black-body-phone.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+
 @media screen and (min-width: 768px){
     main{
-        height: 2850PX;
-        background-image: url("../images/bg-body-tablet.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        height: 2850px;
+        background-image: url("../images/bg-black-body-tablet.png");
     }
 }
 @media screen and (min-width: 1112px){
     main{
-        height: 2160PX;
-        background-image: url("../images/bg-body.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        height: 2160px;
+        background-image: url("../images/bg-black-body-dekstop.png");
     }
 }
