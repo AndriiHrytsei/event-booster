@@ -1,0 +1,110 @@
+.thema-mode{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 40px;
+    top: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.25));
+    background-color: #181818;
+    backdrop-filter: blur(10px);
+    transition: .2s linear;
+    
+    .icon{
+        width: 30px;
+        height: 30px;
+        fill: #fff;
+        transition: .2s linear;
+    }
+
+    .icon-dark{
+        fill: black;
+    }
+}
+
+.light-mode{
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+    background-color: #CDCDCD;
+    backdrop-filter: blur(10px);
+}
+
+
+.light-header{
+    background-image: url("../images/white-hero-phone.png");
+    background-color: #fff;
+    @media screen and (min-width:480px) {
+        background-image: url("../images/white-hero-tablet.png");
+    }
+    @media screen and (min-width:1200px) {
+        background-image: url("../images/white-hero-dekstop.png");
+    }
+}
+
+.light-main{
+    background-image: url("../images/bg-white-body-phone.png");
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @media screen and (min-width:480px) {
+        background-image: url("../images/bg-white-body-tablet.png");
+    }
+    @media screen and (min-width:1200px) {
+        background-image: url("../images/bg-white-body-dekstop.png");
+    }
+}
+
+.light-footer{
+    background-color: #fff;
+}
+
+.svg-logo-dark{
+    fill: #000;
+}
+
+.search-header-blue{
+    color: #5956DC;
+}
+
+.search-by-s-light, .search-by-s-btn-light, .wrapper-light{
+    background: #242424;
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+}
+
+.ramka-event-blue{
+    border: 1px solid #5956DC;
+}
+
+.event-name-blue{
+    color: #5956DC;
+}
+
+.event-h4-black{
+    color: #000;
+}
+
+.event-location-black{
+    color: #000;
+}
+
+.pag-but-blue{
+    color: #000000;
+    &:hover{
+        border: 1px solid #5956DC;
+        color: #5956DC;
+    } 
+}
+
+.countryLi-light{
+    color: #ffffff;
+
+    &:hover, &.selected{
+        border-radius: 5px;
+        background-color: #5956DC;
+    }
+}

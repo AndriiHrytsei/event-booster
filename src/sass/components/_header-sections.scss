@@ -46,6 +46,7 @@
     right: 100px;
     bottom: 15px;
     height: 120px;
+    fill: #fff;
     @media screen and (min-width:768px) {
         right: 70px;
         bottom: 25px;
@@ -141,7 +142,7 @@
     border-radius: 0 40px 40px 0;
     background-color: rgba(255, 255, 255, 0.2);
     &:hover{
-        fill: white;
+        fill: #fff;
     }
 }
 

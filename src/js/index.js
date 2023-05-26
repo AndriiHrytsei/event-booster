@@ -3,7 +3,8 @@ import * as modalsJS from "./modals.js";
 import * as eventsJS from "./events.js";
 import * as countrySearhJS from "./country-select.js";
 import * as loaderJS from "./loader.js";
-import * as themeJS from "./theme_white_and_dark.js";
+import * as themeJS from "./theme.js";
+// import * as themeJS from "./theme_white_and_dark.js";
 
 //!------------- notification ---------------
 
@@ -91,64 +92,60 @@ countrySearhJS.countrySelect.addEventListener("click", (event) => {
 
 //!------------- white and black theme ---------------
 
-themeJS.swicthMode.addEventListener("click",() => {
-  const cardsHtml = document.querySelectorAll("event");
-  const buttonPag = document.querySelectorAll("pag-but");
+themeJS.switchTheme.addEventListener("click", () => {
+  themeJS.iconTheme.classList.toggle("icon-dark");
+  themeJS.switchTheme.classList.toggle("light-mode");
 
-  if (themeJS.swicthMode.classList[1] === "dark") {
-    themeJS.swicthMode.classList.remove("dark");
-    themeJS.swicthMode.classList.add("light");
-    themeJS.headerHtml.classList.remove("dark-header");
-    themeJS.headerHtml.classList.add("light-header");
-    themeJS.mainHtml.classList.remove("dark-main");
-    themeJS.mainHtml.classList.add("light-main");
-    themeJS.footerHtml.classList.remove("dark-footer");
-    themeJS.footerHtml.classList.add("light-footer");
+  // if(themeJS.switchTheme.classList.contains("light-mode")){
+  //     themeJS.headerHtml.classList.toggle("light-header");
+  //     themeJS.svgLogo.classList.toggle("svg-logo-dark");
 
-    // cardsHtml.forEach((card)=>{
-    //   card.querySelector(".event-h4").style.color= "#000";
-    //   card.querySelector(".event-location").style.color= "#000";
-    // })
+  //     themeJS.searchHeader.classList.toggle("search-header-blue");
+  //     themeJS.searchInput.classList.toggle("search-by-s-light");
+  //     themeJS.searchButton.classList.toggle("search-by-s-btn-light");
+  //     themeJS.selectWrapperCountry.classList.toggle("wrapper-light"); 
 
-    // buttonPag.forEach((but)=>{
-    //   but.style.color="#000";
-    // })
-    for(let i = 0; i < cardsHtml.length; i += 1){
-      cardsHtml[i].querySelector(".event-h4").style.color= "#000";
-      cardsHtml[i].querySelector(".event-location").style.color= "#000";
-    }
-    for(let i = 0; i < 10; i += 1){
-       buttonPag[i].style.color="#000"
-    }
+  //     themeJS.mainHtml.classList.toggle("light-main");
+  //     themeJS.footerHtml.classList.toggle("light-footer");
+  // } else{
+  //   themeJS.headerHtml.classList.toggle("light-header");
+  //   themeJS.svgLogo.classList.toggle("svg-logo-dark");
     
-  }
-  else{
-      themeJS.swicthMode.classList.remove("light");
-      themeJS.swicthMode.classList.add("dark");
-      themeJS.headerHtml.classList.remove("light-header");
-      themeJS.headerHtml.classList.add("dark-header");
-      themeJS.mainHtml.classList.remove("light-main");
-      themeJS.mainHtml.classList.add("dark-main");
-      themeJS.footerHtml.classList.remove("light-footer");
-      themeJS.footerHtml.classList.add("dark-footer");
+  //   themeJS.searchHeader.classList.toggle("search-header-blue");
+  //   themeJS.searchInput.classList.toggle("search-by-s-light");
+  //   themeJS.searchButton.classList.toggle("search-by-s-btn-light");
+  //   themeJS.selectWrapperCountry.classList.toggle("wrapper-light"); 
 
-      // cardsHtml.forEach((card)=>{
-      //     card.querySelector(".event-h4").style.color= "#fff";
-      //     card.querySelector(".event-location").style.color= "#fff";
-      // })
-      // buttonPag.forEach((but)=>{
-      //   but.style.color="#fff";
-      // })
-
-      for(let i = 0; i < cardsHtml.length; i += 1){
-          cardsHtml[i].querySelector(".event-h4").style.color= "#fff";
-          cardsHtml[i].querySelector(".event-location").style.color= "#fff";
-      }
-      for(let i = 0;i < 10;i++){
-          buttonPag[i].style.color="#fff"
-      }
+  //   themeJS.mainHtml.classList.toggle("light-main");
+  //   themeJS.footerHtml.classList.toggle("light-footer");
+  // }
+  if(themeJS.switchTheme.classList.contains("light-mode")){
+    themeJS.headerHtml.classList.toggle("light-header");
+    themeJS.svgLogo.classList.toggle("svg-logo-dark");
+      
+    themeJS.searchHeader.classList.toggle("search-header-blue");
+    themeJS.searchInput.classList.toggle("search-by-s-light");
+    themeJS.searchButton.classList.toggle("search-by-s-btn-light");
+    themeJS.selectWrapperCountry.classList.toggle("wrapper-light"); 
+  
+    themeJS.mainHtml.classList.toggle("light-main");
+    themeJS.footerHtml.classList.toggle("light-footer");
+  } else{
+    themeJS.headerHtml.classList.toggle("light-header");
+    themeJS.svgLogo.classList.toggle("svg-logo-dark");
+      
+    themeJS.searchHeader.classList.toggle("search-header-blue");
+    themeJS.searchInput.classList.toggle("search-by-s-light");
+    themeJS.searchButton.classList.toggle("search-by-s-btn-light");
+    themeJS.selectWrapperCountry.classList.toggle("wrapper-light"); 
+  
+    themeJS.mainHtml.classList.toggle("light-main");
+    themeJS.footerHtml.classList.toggle("light-footer");
   }
-})
+
+ 
+
+} )
 
 //!------------- pagination ---------------
 const paginationBox = document.querySelector('.pagination')//****ДОБАВИТИ СТИЛІ */
@@ -179,6 +176,7 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
         const endIndex = page * eventsPerPage;
         const eventsToRender = events.slice(startIndex, endIndex);
         eventsJS.renderEvents(eventsToRender);
+        addStyle();
       }
 
       // Функція для відображення посторінкової навігації
@@ -196,7 +194,8 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
             renderPage(currentPage);
           });
           paginationBox.appendChild(button);
-          button.classList.add("pag-but")
+          button.classList.add("pag-but");
+          addStyle();
         }
         // Додавання контейнера пагінації до сторінки
         
@@ -206,7 +205,54 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
 
       renderPage(currentPage);
       renderPagination();
+      addStyle();
 
+      function addStyle(){
+        const ramkaEvents = document.querySelectorAll(".ramka-event");
+        const nameEvents = document.querySelectorAll(".event-name");
+        const dateEvents = document.querySelectorAll(".event-h4");
+        const locationEvents = document.querySelectorAll(".event-location");
+        const pageButs = document.querySelectorAll(".pag-but");
+
+        themeJS.switchTheme.addEventListener("click", () => {
+          if(themeJS.switchTheme.classList.contains("light-mode")){
+            ramkaEvents.forEach((ramka)=>{
+              ramka.classList.add("ramka-event-blue");
+            })
+            nameEvents.forEach((name)=>{
+              name.classList.add("event-name-blue"); 
+            })
+            dateEvents.forEach((date)=>{
+              date.classList.add("event-h4-black");  
+            })
+            locationEvents.forEach((location)=>{
+              location.classList.add("event-location-black"); 
+            })
+            pageButs.forEach((but)=>{
+              but.classList.add("pag-but-blue"); 
+            })
+          } else{
+            ramkaEvents.forEach((ramka)=>{
+              ramka.classList.remove("ramka-event-blue");
+            })
+            nameEvents.forEach((name)=>{
+              name.classList.remove("event-name-blue"); 
+            })
+            dateEvents.forEach((date)=>{
+              date.classList.remove("event-h4-black");  
+            })
+            locationEvents.forEach((location)=>{
+              location.classList.remove("event-location-black"); 
+            })
+            pageButs.forEach((but)=>{
+              but.classList.remove("pag-but-blue"); 
+            })
+          }
+        })
+      }
+
+      
+    })
   
 //!------------- modals ---------------
   eventsJS.eventList.addEventListener("click", (e) => {
@@ -244,7 +290,7 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
       modalsJS.modal.style.display = "none";
     }
   };
-  })
+
   // .catch(()=>{
   //   Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");   
   // })

@@ -319,7 +319,7 @@
         position: relative;
         z-index: 1;
     }
-    .event h3{
+    .event-name{
         min-height: 20px;
         max-height: 45px;
         font-family: 'Montserrat';
@@ -337,7 +337,7 @@
             display: none;
         }
     }
-    .event h4{
+    .event-h4{
         // height: 14px;
         font-family: 'Montserrat';
         font-style: normal;
@@ -455,13 +455,13 @@
         width: 180px;
         height: 227px;
     }
-    .event h3{
+    .event-name{
         // height: 20px;
         font-size: 16px;
         line-height: 20px;
         max-height: 55px;
     }
-    .event h4{
+    .event-h4{
         // height: 20px;
         font-size: 16px;
         line-height: 20px;
@@ -570,12 +570,12 @@
         margin-bottom: 50px;
         margin-right: 56px;
     }
-    .event h3{
+    .event-name{
         // height: 60px;
         font-size: 16px;
         line-height: 20px;
     }
-    .event h4{
+    .event-h4{
         // height: 20px;
         font-size: 16px;
         line-height: 20px;
@@ -596,30 +596,31 @@
     flex-direction: row;
     justify-content: center;
     gap: 5px;
+}
 
-    .pag-but{
-        border: 1px solid transparent;
-        background-color: transparent;
-        border-radius: 10px 0;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: center;
-        color: #FFFFFF; 
-        transition: .3s border ease-in-out, .3s color ease-in-out;
-        
+.pag-but{
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 10px 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF; 
+    transition: .3s border ease-in-out, .3s color ease-in-out;
+    
 
-        &:hover{
-            border: 1px solid #DC56C5;
-            color: #DC56C5;
-        }
+    &:hover{
+        border: 1px solid #DC56C5;
+        color: #DC56C5;
     }
 }
+
 }
