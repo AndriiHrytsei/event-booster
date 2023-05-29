@@ -79,7 +79,7 @@
             height: 45px;
         }
 
-        li{
+        .countryLi{
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -94,6 +94,10 @@
                 border-radius: 5px;
                 background-color: #DC56C5;
             }
+        }
+
+        .countryLi-blue:hover{
+            background-color: #5956DC;
         }
     }
 }

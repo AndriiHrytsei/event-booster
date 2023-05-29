@@ -1,5 +1,6 @@
 export const switchTheme = document.querySelector(".thema-mode");
-export const iconTheme = switchTheme.querySelector(".icon");
+export const iconSun = switchTheme.querySelector(".icon-sun");
+export const iconMoon= switchTheme.querySelector(".icon-moon");
 
 export const headerHtml = document.querySelector("header");
 export const svgLogo = document.querySelector(".svg-logo");
@@ -13,7 +14,7 @@ export const mainHtml = document.querySelector("main");
 export const footerHtml = document.querySelector("footer");
 
 // switchTheme.addEventListener("click", () => {
-//     iconTheme.classList.toggle("icon-dark");
+//     iconSun.classList.toggle("icon-dark");
 //     switchTheme.classList.toggle("light-mode");
 
 //     if(switchTheme.classList.contains("light-mode")){

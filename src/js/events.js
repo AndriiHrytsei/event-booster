@@ -1,7 +1,9 @@
-export const eventList = document.querySelector(".list-cards")
-export const eventInput = document.querySelector(".search-by-s")
-export const countryInput = document.querySelector(".options")
-export const searchForm = document.querySelector(".search-form")
+export const eventList = document.querySelector(".list-cards");
+export const eventInput = document.querySelector(".search-by-s");
+export const countryInput = document.querySelector(".options");
+export const searchForm = document.querySelector(".search-form");
+
+const changeTheme = document.querySelector(".thema-mode");
 
 export async function fetchEvents(api){
     try{
@@ -14,10 +16,22 @@ export async function fetchEvents(api){
 }
 
 export function renderEvents(events) {
+    let ramkaClass = "";
+    let eventNameClass = "";
+    let eventDateClass = "";
+    let eventLocationClass = "";
+
+    if(changeTheme.classList.contains("light-mode")){
+        ramkaClass = "ramka-event-blue";
+        eventNameClass = "event-name-blue";
+        eventDateClass = "event-h4-black";
+        eventLocationClass = "event-location-black"; 
+    }
+
     events.forEach(event => {
         eventList.insertAdjacentHTML("beforeend", `
             <li class="event">
-            <div class="ramka-event"></div>
+            <div class="ramka-event ${ramkaClass}"></div>
             <img class="event-image" src=${event["images"][0]["url"]}
                 data-name="${event["name"]}"
                 data-eventimghead="${event["images"][0]["url"]}"
@@ -31,9 +45,9 @@ export function renderEvents(events) {
                 data-who="${event["name"]}"
                 data-info="${event["info"]}"
             >
-                <h3 class="event-name">${event["name"]}</h3>
-                <h4 class = "event-h4">${event["dates"]["start"]["localDate"]}</h4>
-                <p class = "event-location">
+                <h3 class="event-name ${eventNameClass}">${event["name"]}</h3>
+                <h4 class = "event-h4 ${eventDateClass}">${event["dates"]["start"]["localDate"]}</h4>
+                <p class = "event-location ${eventLocationClass}">
                     ${event["_embedded"]["venues"][0]["name"]}
                 </p>
             </li>
