@@ -4,10 +4,8 @@ import * as eventsJS from "./events.js";
 import * as countrySearhJS from "./country-select.js";
 import * as loaderJS from "./loader.js";
 import * as themeJS from "./theme.js";
-// import * as themeJS from "./theme_white_and_dark.js";
 
 //!------------- notification ---------------
-
 Notiflix.Notify.init({
   failure: {
   background: '#FFFFFF',
@@ -26,7 +24,6 @@ countrySearhJS
   .fetchCountries("https://restcountries.com/v3.1/all")
   .then((data) => {
     countrySearhJS.renderCountries(data);
-    // countrySearhJS.searchCountry(data);
 });
 
 countrySearhJS.selectBtn.addEventListener("click", () => {
@@ -90,65 +87,105 @@ countrySearhJS.countrySelect.addEventListener("click", (event) => {
 //     });
 // });
 
-//!------------- white and black theme ---------------
+//!------------- white & black theme ---------------
+function addStyle(){
+  const ramkaEvents = document.querySelectorAll(".ramka-event");
+  const nameEvents = document.querySelectorAll(".event-name");
+  const dateEvents = document.querySelectorAll(".event-h4");
+  const locationEvents = document.querySelectorAll(".event-location");
+  const pageButs = document.querySelectorAll(".pag-but");
+
+  themeJS.switchTheme.addEventListener("click", () => {
+    if(themeJS.switchTheme.classList.contains("light-mode")){
+      ramkaEvents.forEach((ramka)=>{
+        ramka.classList.add("ramka-event-blue");
+      })
+      nameEvents.forEach((name)=>{
+        name.classList.add("event-name-blue"); 
+      })
+      dateEvents.forEach((date)=>{
+        date.classList.add("event-h4-black");  
+      })
+      locationEvents.forEach((location)=>{
+        location.classList.add("event-location-black"); 
+      })
+      pageButs.forEach((but)=>{
+        but.classList.add("pag-but-blue"); 
+      })
+    } else{
+      ramkaEvents.forEach((ramka)=>{
+        ramka.classList.remove("ramka-event-blue");
+      })
+      nameEvents.forEach((name)=>{
+        name.classList.remove("event-name-blue"); 
+      })
+      dateEvents.forEach((date)=>{
+        date.classList.remove("event-h4-black");  
+      })
+      locationEvents.forEach((location)=>{
+        location.classList.remove("event-location-black"); 
+      })
+      pageButs.forEach((but)=>{
+        but.classList.remove("pag-but-blue"); 
+      })
+    }
+  })
+}
 
 themeJS.switchTheme.addEventListener("click", () => {
-  themeJS.iconTheme.classList.toggle("icon-dark");
   themeJS.switchTheme.classList.toggle("light-mode");
+  //todo------------- header -------------
+  themeJS.headerHtml.classList.toggle("light-header");
+  themeJS.svgLogo.classList.toggle("svg-logo-dark");
+  
+  //todo------------- input & select -------------
+  themeJS.searchHeader.classList.toggle("search-header-blue");
+  themeJS.searchInput.classList.toggle("search-by-s-light");
+  themeJS.searchButton.classList.toggle("search-by-s-btn-light");
+  themeJS.selectWrapperCountry.classList.toggle("wrapper-light"); 
 
-  // if(themeJS.switchTheme.classList.contains("light-mode")){
-  //     themeJS.headerHtml.classList.toggle("light-header");
-  //     themeJS.svgLogo.classList.toggle("svg-logo-dark");
+  //todo------------- main & footer -------------
+  themeJS.mainHtml.classList.toggle("light-main");
+  themeJS.footerHtml.classList.toggle("light-footer");
 
-  //     themeJS.searchHeader.classList.toggle("search-header-blue");
-  //     themeJS.searchInput.classList.toggle("search-by-s-light");
-  //     themeJS.searchButton.classList.toggle("search-by-s-btn-light");
-  //     themeJS.selectWrapperCountry.classList.toggle("wrapper-light"); 
-
-  //     themeJS.mainHtml.classList.toggle("light-main");
-  //     themeJS.footerHtml.classList.toggle("light-footer");
-  // } else{
-  //   themeJS.headerHtml.classList.toggle("light-header");
-  //   themeJS.svgLogo.classList.toggle("svg-logo-dark");
-    
-  //   themeJS.searchHeader.classList.toggle("search-header-blue");
-  //   themeJS.searchInput.classList.toggle("search-by-s-light");
-  //   themeJS.searchButton.classList.toggle("search-by-s-btn-light");
-  //   themeJS.selectWrapperCountry.classList.toggle("wrapper-light"); 
-
-  //   themeJS.mainHtml.classList.toggle("light-main");
-  //   themeJS.footerHtml.classList.toggle("light-footer");
-  // }
+  //todo------------- icons & notification-------------
   if(themeJS.switchTheme.classList.contains("light-mode")){
-    themeJS.headerHtml.classList.toggle("light-header");
-    themeJS.svgLogo.classList.toggle("svg-logo-dark");
-      
-    themeJS.searchHeader.classList.toggle("search-header-blue");
-    themeJS.searchInput.classList.toggle("search-by-s-light");
-    themeJS.searchButton.classList.toggle("search-by-s-btn-light");
-    themeJS.selectWrapperCountry.classList.toggle("wrapper-light"); 
-  
-    themeJS.mainHtml.classList.toggle("light-main");
-    themeJS.footerHtml.classList.toggle("light-footer");
+    themeJS.iconSun.style.display = "none";
+    themeJS.iconMoon.style.display = "block";
+
+    Notiflix.Notify.init({
+      failure: {
+      background: '#000000',
+      textColor: '#FFFFFF',
+      childClassName: 'notiflix-notify-failure',
+      notiflixIconColor: '#DC56C5',
+      fontAwesomeClassName: 'fas fa-times-circle',
+      fontAwesomeIconColor: '#DC56C5',
+      backOverlayColor: 'rgba(255,85,73,0.2)',
+      fontFamily: 'Montserrat',
+      }
+    })
   } else{
-    themeJS.headerHtml.classList.toggle("light-header");
-    themeJS.svgLogo.classList.toggle("svg-logo-dark");
-      
-    themeJS.searchHeader.classList.toggle("search-header-blue");
-    themeJS.searchInput.classList.toggle("search-by-s-light");
-    themeJS.searchButton.classList.toggle("search-by-s-btn-light");
-    themeJS.selectWrapperCountry.classList.toggle("wrapper-light"); 
-  
-    themeJS.mainHtml.classList.toggle("light-main");
-    themeJS.footerHtml.classList.toggle("light-footer");
+    themeJS.iconSun.style.display = "block";
+    themeJS.iconMoon.style.display = "none";
+    Notiflix.Notify.init({
+      failure: {
+      background: '#FFFFFF',
+      textColor: '#000000',
+      childClassName: 'notiflix-notify-failure',
+      notiflixIconColor: '#DC56C5',
+      fontAwesomeClassName: 'fas fa-times-circle',
+      fontAwesomeIconColor: '#DC56C5',
+      backOverlayColor: 'rgba(255,85,73,0.2)',
+      fontFamily: 'Montserrat',
+      }
+    })
   }
-
- 
-
+  addStyle();
 } )
 
 //!------------- pagination ---------------
-const paginationBox = document.querySelector('.pagination')//****ДОБАВИТИ СТИЛІ */
+const paginationBox = document.querySelector('.pagination')//* Додати стилі */
 eventsJS.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   eventsJS.eventList.replaceChildren("");
@@ -162,7 +199,7 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
       console.log(data["page"]["totalElements"]);
 
       if(data["page"]["totalElements"] === 0){
-        Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
+        Notiflix.Notify.failure("Sorry, there are no events matching your search query. Please try again.");
       }
       const events = data["_embedded"]["events"];
       const eventsPerPage = 20; // Кількість подій на сторінці
@@ -195,6 +232,16 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
           });
           paginationBox.appendChild(button);
           button.classList.add("pag-but");
+
+          const changeTheme = document.querySelector(".thema-mode");
+          let pageButClass = "";
+          
+
+          if(changeTheme.classList.contains("light-mode")){
+            pageButClass = "pag-but-blue";
+            button.classList.add(pageButClass);
+            console.log(pageButClass);
+          }
           addStyle();
         }
         // Додавання контейнера пагінації до сторінки
@@ -205,53 +252,6 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
 
       renderPage(currentPage);
       renderPagination();
-      addStyle();
-
-      function addStyle(){
-        const ramkaEvents = document.querySelectorAll(".ramka-event");
-        const nameEvents = document.querySelectorAll(".event-name");
-        const dateEvents = document.querySelectorAll(".event-h4");
-        const locationEvents = document.querySelectorAll(".event-location");
-        const pageButs = document.querySelectorAll(".pag-but");
-
-        themeJS.switchTheme.addEventListener("click", () => {
-          if(themeJS.switchTheme.classList.contains("light-mode")){
-            ramkaEvents.forEach((ramka)=>{
-              ramka.classList.add("ramka-event-blue");
-            })
-            nameEvents.forEach((name)=>{
-              name.classList.add("event-name-blue"); 
-            })
-            dateEvents.forEach((date)=>{
-              date.classList.add("event-h4-black");  
-            })
-            locationEvents.forEach((location)=>{
-              location.classList.add("event-location-black"); 
-            })
-            pageButs.forEach((but)=>{
-              but.classList.add("pag-but-blue"); 
-            })
-          } else{
-            ramkaEvents.forEach((ramka)=>{
-              ramka.classList.remove("ramka-event-blue");
-            })
-            nameEvents.forEach((name)=>{
-              name.classList.remove("event-name-blue"); 
-            })
-            dateEvents.forEach((date)=>{
-              date.classList.remove("event-h4-black");  
-            })
-            locationEvents.forEach((location)=>{
-              location.classList.remove("event-location-black"); 
-            })
-            pageButs.forEach((but)=>{
-              but.classList.remove("pag-but-blue"); 
-            })
-          }
-        })
-      }
-
-      
     })
   
 //!------------- modals ---------------
@@ -290,10 +290,6 @@ eventsJS.searchForm.addEventListener("submit", (e) => {
       modalsJS.modal.style.display = "none";
     }
   };
-
-  // .catch(()=>{
-  //   Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");   
-  // })
 });
 
 //!------------- loader ---------------
